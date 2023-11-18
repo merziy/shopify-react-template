@@ -1,0 +1,52 @@
+{
+  "name": "shopify-react-template",
+  "version": "1.0.0",
+  "scripts": {
+    "login:dev": "echo \"Error: no dev site specified\" && exit 1",
+    "login:prod": "shopify theme dev --path ./shopify --store development-alexander.myshopify.com",
+    "serve": "shopify theme dev --path ./shopify",
+    "start": "run-p -sr serve webpack:watch",
+    "pull-merch": "shopify theme pull --path ./shopify --nodelete -o templates/*.json config/settings_data.json locales/*.json",
+    "pull-theme": "shopify theme pull --path ./shopify",
+    "webpack:watch": "cross-env NODE_ENV=development BROWSERSLIST_ENV=development BROWSERSLIST_CONFIG=./.config/.browserslistrc webpack --config ./.config/webpack/webpack.dev.js --watch --progress",
+    "webpack:build": "cross-env NODE_ENV=production BROWSERSLIST_ENV=production BROWSERSLIST_CONFIG=./.config/.browserslistrc webpack --config ./.config/webpack/webpack.prod.js --progress",
+    "deploy": "run-s webpack:build && shopify theme push --path ./shopify --nodelete",
+    "deploy:new": "run-s webpack:build && shopify theme push --path ./shopify --nodelete --unpublished"
+  },
+  "author": "Alexander Mathis",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swiper": "^11.0.4",
+    "tailwindcss": "^3.3.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "autoprefixer": "^10.4.16",
+    "babel-loader": "^9.1.3",
+    "browserlist": "^1.0.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-webpack-plugin": "^4.0.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.31",
+    "postcss-html": "^1.5.0",
+    "prettier": "^3.1.0",
+    "style-loader": "^3.3.3",
+    "stylelint": "14",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended": "^13.0.0",
+    "stylelint-webpack-plugin": "^4.1.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
