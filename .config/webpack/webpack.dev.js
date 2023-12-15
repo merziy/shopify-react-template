@@ -11,14 +11,14 @@ module.exports = merge(common, {
      * docs: https://www.npmjs.com/package/eslint-webpack-plugin
      */
     new ESLintPlugin({
-      files: "src/**/*.{js,jsx}",
+      files: "src/**/*.{js,jsx,ts,tsx}",
       overrideConfigFile: path.resolve(__dirname, "../.eslintrc.js"),
     }),
     /**
      * docs: https://www.npmjs.com/package/stylelint-webpack-plugin
      */
     new StylelintPlugin({
-      files: "src/**/*.{jsx,css,sass,scss}",
+      files: "src/**/*.{jsx,tsx,css,sass,scss}",
       configFile: path.resolve(__dirname, "../.stylelintrc.js"),
     }),
   ],

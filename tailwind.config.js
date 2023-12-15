@@ -4,12 +4,8 @@
  * docs: https://tailwindcss.com/docs/configuration
  * default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
-const path = require("path");
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  // Important set to a selector will add a .tw scope to tailwind styles.
-  // Add this class to a root element where you want to use tailwind.
-  important: ".tw",
   theme: {
     extend: {},
     container: {
@@ -24,7 +20,7 @@ module.exports = {
   },
   plugins: [],
   content: [
-    path.resolve(__dirname, "**/*.{js,jsx}"),
-    path.resolve(__dirname, "../shopify/**/*.liquid"),
+    './shopify/**/*.liquid',
+    './src/**/*.{tsx,ts,jsx,js}'
   ],
 };

@@ -6,14 +6,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   stats: "minimal",
   entry: {
-    main: path.resolve(__dirname, "../../src/main.js"),
+    main: path.resolve(__dirname, "../../src/main.js")
   },
   output: {
     path: path.resolve(__dirname, "../../shopify/assets/"),
     filename: "[name].js",
   },
   resolve: {
-    extensions: ["*", ".jsx", ".js", ".json"],
+    extensions: [".jsx", ".js", ".ts", ".tsx", ".json"],
     alias: {
       "@": path.resolve(__dirname, "./src/"),
       "@shopify-directory": path.resolve(__dirname, "./shopify/"),
@@ -63,6 +63,7 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
+                config: path.resolve(__dirname, "../../postcss.config.js"),
                 plugins: [
                   require("postcss-import"),
                   require("tailwindcss"),

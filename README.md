@@ -2,7 +2,7 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-all the webpack fun (some of the scripts are influenced by friends at the Stable)
+Some of the scripts are influenced by friends at the Stable, I do not take credit for this extremely well-documented readme, although I have modified it.
 
 here is some info about this project: 
 

@@ -2,6 +2,9 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import components from "./react/components/index.js";
 
+// Import Tailwind base
+import "./input.css";
+
 const { designMode, inspectMode } = window.Shopify;
 const isDesignMode = designMode || inspectMode;
 
